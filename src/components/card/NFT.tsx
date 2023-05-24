@@ -79,30 +79,7 @@ export default function NFT(props: {
 								me='14px'>
 								{name}
 							</Text>
-							<Text
-								color='secondaryGray.600'
-								fontSize={{
-									base: 'sm'
-								}}
-								fontWeight='400'
-								me='14px'>
-								{author}
-							</Text>
 						</Flex>
-						<AvatarGroup
-							max={3}
-							color={textColorBid}
-							size='sm'
-							mt={{
-								base: '0px',
-								md: '10px',
-								lg: '0px',
-								xl: '10px',
-								'2xl': '0px'
-							}}
-							fontSize='12px'>
-							{bidders.map((avt, key) => <Avatar key={key} src={avt} />)}
-						</AvatarGroup>
 					</Flex>
 					<Flex
 						align={{
@@ -121,9 +98,6 @@ export default function NFT(props: {
 							'2xl': 'row'
 						}}
 						mt='25px'>
-						<Text fontWeight='700' fontSize='sm' color={textColorBid}>
-							Current Bid: {currentbid}
-						</Text>
 						<Link
 							href={download}
 							mt={{
@@ -141,7 +115,7 @@ export default function NFT(props: {
 								borderRadius='70px'
 								px='24px'
 								py='5px'>
-								Place Bid
+								Open
 							</Button>
 						</Link>
 					</Flex>

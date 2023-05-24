@@ -34,10 +34,11 @@ import { ActionSocketComponent } from "../ui/ActionSocket";
 import { TextSocketComponent } from "../ui/TextSocket";
 import { ActionConnectionComponent } from "../ui/ActionConnection";
 import { TextConnectionComponent } from "../ui/TextConnection";
-import { ChatNodeComponent } from "../ui/Chat";
 import { CustomNodeComponent } from "../ui/CustomNode";
 import { getConnectionSockets } from "../utils";
 import { addCustomBackground } from "../ui/background";
+import { CustomInputControl } from "../nodes/message";
+import { CustomInputComponent } from "../nodes/message";
 
 type AreaExtra = ReactArea2D<any> | ContextMenuExtra<Schemes>;
 
@@ -75,6 +76,8 @@ export async function createEditor(
     };
   });
 
+
+  
   const contextMenu = new ContextMenuPlugin<Schemes, AreaExtra>({
     items: ContextMenuPresets.classic.setup([
       ["On message", () => new OnMessage()],
@@ -115,7 +118,13 @@ export async function createEditor(
         },
         node(data) {
           return CustomNodeComponent;
-        }
+        },
+        control(context) {
+          if (context.payload instanceof CustomInputControl) {
+            return CustomInputComponent;
+          }
+          return Presets.classic.Control;
+        },
       }
     })
   );
@@ -165,7 +174,7 @@ export async function createEditor(
   await editor.addNode(message1);
   await editor.addNode(message2);
 
-
+  
   await editor.addConnection(con1);
   await editor.addConnection(con2);
 

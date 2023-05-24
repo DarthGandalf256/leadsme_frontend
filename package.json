@@ -1,5 +1,5 @@
 {
-	"homepage": "https://horizon-ui.com/horizon-ui-chakra-ts",
+	"homepage": "https://DarthGandalf256.github.io/leadsme_frontend",
 	"name": "horizon-ui-chakra-typescript",
 	"version": "1.1.0",
 	"private": true,
@@ -49,10 +49,11 @@
 		"rete-auto-arrange-plugin": "2.0.0-beta.6",
 		"rete-connection-plugin": "2.0.0-beta.12",
 		"rete-context-menu-plugin": "2.0.0-beta.6",
+		"rete-dock-plugin": "^0.2.1",
 		"rete-engine": "2.0.0-beta.7",
 		"rete-react-render-plugin": "2.0.0-beta.18",
 		"rete-render-utils": "2.0.0-beta.10",
-		"styled-components": "^5.3.10",
+		"styled-components": "^6.0.0-rc.1",
 		"stylis": "^4.1.1",
 		"stylis-plugin-rtl": "2.0.2",
 		"typescript": "^4.7.4",
@@ -61,12 +62,12 @@
 		"web-worker": "^1.2.0"
 	},
 	"scripts": {
+		"predeploy": "npm run build",
+		"deploy": "gh-pages -d build",
 		"start": "react-scripts start",
 		"build": "react-scripts build",
 		"test": "react-scripts test",
-		"eject": "react-scripts eject",
-		"predeploy": "npm run build",
-		"deploy": "gh-pages -d build"
+		"eject": "react-scripts eject"
 	},
 	"eslintConfig": {
 		"extends": [
@@ -89,6 +90,6 @@
 	"devDependencies": {
 		"@types/react-calendar": "^3.5.2",
 		"@types/react-router-dom": "^5.3.3",
-		"gh-pages": "^3.2.3"
+		"gh-pages": "^5.0.0"
 	}
 }
